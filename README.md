@@ -44,6 +44,10 @@ This works in 2.2/develop. Not sure about 2.3 or 2.1.
     <img src="img/snake1.jpg" width="1400" height="500">
   </div>
 </div>
+{{ else }}
+<div class="mobile-logo">
+  <img src="img/mobile-logo.png" width="200" height="200">
+</div>
 {{ endif }}
 ```
 
