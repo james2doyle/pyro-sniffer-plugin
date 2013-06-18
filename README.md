@@ -3,9 +3,11 @@ pyro-sniffer-plugin
 
 Sniff information from the user agent for use in the frontend. Useful for adding classes or conditional loading.
 
-This plugin is *not* built on the [CodeIgniter User Agent Library](http://ellislab.com/codeigniter/user-guide/libraries/user_agent.html). If you are looking for a plugin that uses the user agent library, check out [this plugin called Agent](https://www.pyrocms.com/store/details/agent_plugin).
+This plugin is **not** built on the [CodeIgniter User Agent Library](http://ellislab.com/codeigniter/user-guide/libraries/user_agent.html).
 
-The reason I did not the built in CodeIgniter tool, was because Pyro is only going to have CodeIgniter for a few more months, and I also want to have the information returned in a different way.
+The reason I did not use the built in CodeIgniter lib, was because Pyro is only going to have CodeIgniter for a few more months(right?!?!), and I also want to have the information returned in a different way. This plugin is pretty small and only really gets information that is helpful to be used in CSS and Javascript (CSS custom classes and js feature detection/fallbacks).
+
+If you are looking for a plugin that uses the user agent library, check out [this plugin called Agent](https://www.pyrocms.com/store/details/agent_plugin).
 
 ### Usage
 
