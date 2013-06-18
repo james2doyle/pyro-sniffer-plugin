@@ -26,6 +26,27 @@ On my iPhone, this would return:
 ```html
 <body class=" apple-mobile-safari ios">
 ```
+
+#### conditional content
+
+This works in 2.2/develop. Not sure about 2.3 or 2.1.
+
+```html
+{{ if { sniffer:get key="platform" } != 'ios' }}
+<div class="huge-slider">
+  <div class="slide">
+    <img src="img/kitten1.jpg" width="1400" height="500">
+  </div>
+  <div class="slide">
+    <img src="img/puppy1.jpg" width="1400" height="500">
+  </div>
+  <div class="slide">
+    <img src="img/snake1.jpg" width="1400" height="500">
+  </div>
+</div>
+{{ endif }}
+```
+
 here is the full dump of the `$results` object for my machine:
 
 ```php
