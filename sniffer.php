@@ -133,11 +133,14 @@ class Plugin_Sniffer extends Plugin
     // check if we have a number
     if ($version == null || $version == "") {$version = "?";}
 
+    $type = (preg_match('!(tablet|pad|mobile|phone|symbian|android|ipod|ios|blackberry|webos)!i', $u_agent)) ? 'mobile' : 'desktop';
+
     $result = array(
       'useragent' => $u_agent,
       'name'      => $bname,
       'browser'   => str_replace(' ', '-', strtolower($bname)),
       'version'   => $version,
+      'type'   => $type,
       'platform'  => $platform,
       'pattern'   => $pattern
       );
