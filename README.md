@@ -12,19 +12,19 @@ If you are looking for a plugin that uses the user agent library, check out [thi
 ### Usage
 
 ```html
-<body class="{{ sniffer:get key="browser|platform" }}">
+<body class="{{ sniffer:get key="browser|platform|type" }}">
 ```
 
 On my Mac running Google Chrome, this would return:
 
 ```html
-<body class=" google-chrome mac">
+<body class=" google-chrome mac desktop">
 ```
 
 On my iPhone, this would return:
 
 ```html
-<body class=" apple-mobile-safari ios">
+<body class=" apple-mobile-safari ios mobile">
 ```
 
 #### conditional content
@@ -32,7 +32,7 @@ On my iPhone, this would return:
 This works in 2.2/develop. Not sure about 2.3 or 2.1.
 
 ```html
-{{ if { sniffer:get key="platform" } != 'ios' }}
+{{ if { sniffer:get key="type" } == 'desktop' }}
 <div class="huge-slider">
   <div class="slide">
     <img src="img/kitten1.jpg" width="1400" height="500">
@@ -59,6 +59,7 @@ $results = array (
   ['name'] => 'Google Chrome' // name of the browser
   ['browser'] => 'google-chrome' // CSS safe browser name
   ['version'] => '28.0.1500.44' // bowser version
+  ['type'] => 'desktop' // device form factor
   ['platform'] => 'mac' // OS platform
   ['pattern'] => '#(?Version|Chrome|other)[/ ]+(?[0-9.|a-zA-Z.]*)#' // match pattern
 );
