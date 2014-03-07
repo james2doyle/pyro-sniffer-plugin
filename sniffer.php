@@ -86,7 +86,7 @@ class Plugin_Sniffer extends Plugin
     }
 
     // Next get the name of the useragent seperately and for good reason
-    if(preg_match('/MSIE/i',$u_agent) && !preg_match('/Opera/i',$u_agent)) {
+    if((preg_match('/MSIE/i',$u_agent) && !preg_match('/Opera/i',$u_agent)) || preg_match('/Trident/i',$u_agent)) {
       $bname = 'Internet Explorer';
       $ub = "MSIE";
     } elseif(preg_match('/Firefox/i', $u_agent)) {
@@ -104,6 +104,9 @@ class Plugin_Sniffer extends Plugin
     } elseif(preg_match('/Opera/i', $u_agent)) {
       $bname = 'Opera';
       $ub = "Opera";
+    } else {
+      $bname = 'Unknown';
+      $ub = "Unknown";
     }
 
     // finally get the correct version number
