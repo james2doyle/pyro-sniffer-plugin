@@ -104,6 +104,9 @@ class Plugin_Sniffer extends Plugin
     } elseif(preg_match('/Opera/i', $u_agent)) {
       $bname = 'Opera';
       $ub = "Opera";
+    } elseif(preg_match('/Trident/i', $u_agent)) {
+      $bname = 'Trident';
+      $ub = "Trident";
     } else {
       $bname = 'Unknown';
       $ub = "Unknown";
@@ -119,6 +122,7 @@ class Plugin_Sniffer extends Plugin
 
     // see how many we have
     $i = count($matches['browser']);
+    $version = 'unknown';
     if ($i != 1) {
       // we will have two since we are not using 'other' argument yet
       // see if version is before or after the name
@@ -127,7 +131,7 @@ class Plugin_Sniffer extends Plugin
       } elseif (strripos($u_agent,"Version") < strripos($u_agent,$ub)){
         $version = $matches['version'][0];
       } else {
-        $version = $matches['version'][1];
+        $version = isset($matches['version'][1]) ? $matches['version'][1]: 'unknown';
       }
     } else {
       $version = $matches['version'][0];
